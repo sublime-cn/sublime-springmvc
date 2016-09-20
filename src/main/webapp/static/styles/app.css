@@ -5981,51 +5981,6 @@ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTa
     margin: 5px
 }
 
-.parsley-errors-list {
-    list-style: none;
-    padding: 0
-}
-
-.parsley-success {
-    border-color: #15db81;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
-}
-
-.parsley-success:focus {
-    border-color: #11ac66;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #66f0b1;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #66f0b1
-}
-
-.parsley-warning {
-    border-color: #daac16;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
-}
-
-.parsley-warning:focus {
-    border-color: #ac8711;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #f0cf66;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #f0cf66
-}
-
-.parsley-error {
-    border-color: #da3e16;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
-}
-
-.parsley-error:focus {
-    border-color: #ac3111;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #f08266;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #f08266
-}
-
-.parsley-error-list {
-    color: #a94442
-}
-
 .piechart {
     position: relative;
     display: inline-block

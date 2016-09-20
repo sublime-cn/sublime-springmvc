@@ -19,20 +19,32 @@
                         会员管理系统
                     </header>
                     <div class="p15">
-                        <form action="" role="form">
+                        <form action="${ctx}account/signin" role="form" id="loginForm" data-parsley-validate method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control input-lg mb25" placeholder="Username" autofocus>
+                                <input type="text" class="form-control input-lg mb25" placeholder="Username"
+                                       id="username" name="username" required autofocus>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control input-lg mb25" placeholder="Password">
+                                <input type="password" class="form-control input-lg mb25" placeholder="Password"
+                                       id="password" name="password" required>
                             </div>
 
                             <button class="btn btn-primary btn-lg btn-block" type="submit">登 录</button>
                         </form>
                     </div>
                 </section>
+                <p class="text-center text-default">
+                    Copyright &copy;
+                    <span id="year" class="mr5"></span>
+                </p>
             </div>
         </div>
     </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#year").html(new Date().getFullYear());
+    });
+</script>
 </body>
 </html>
