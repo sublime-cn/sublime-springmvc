@@ -1,3 +1,4 @@
+<%--
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/commons/taglib.jsp" %>
 <!doctype html>
@@ -15,4 +16,4 @@
 </div>
 <%@ include file="/commons/jslib.jsp" %>
 </body>
-</html>
+</html>--%>
