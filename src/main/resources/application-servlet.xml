@@ -18,7 +18,28 @@
     <mvc:resources mapping="/static/**" location="/static/"/>
 
     <!--定义返回视图-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="${web.view.prefix}" p:suffix="${web.view.suffix}"></bean>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="${web.view.prefix}" p:suffix="${web.view.suffix}" p:order="1"></bean>
+
+    <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+
+    <!-- 配置freeMarker的模板路径 -->
+    <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/ftl/"></property>
+        <property name="freemarkerVariables">
+            <map>
+                <entry key="xml_escape" value-ref="fmXmlEscape"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 配置freeMarker视图解析器 -->
+    <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="contentType" value="text/html; charset=utf-8"/>
+        <property name="cache" value="false" />
+        <property name="suffix" value=".html" />
+        <property name="order" value="0"/>
+    </bean>
 
 </beans>
