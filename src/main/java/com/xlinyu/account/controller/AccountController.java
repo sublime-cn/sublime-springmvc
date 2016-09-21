@@ -25,7 +25,7 @@ public class AccountController {
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public String login(User user){
         logger.info(user);
-        return "index";
+        return "redirect:/";
 
     }
 

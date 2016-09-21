@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/commons/taglib.jsp" %>
-<html>
+<!doctype html>
+<html lang="zh-cn">
 <head>
     <%@ include file="/commons/meta.jsp" %>
     <title>Sublime - Web Application Admin Dashboard</title>
     <%@ include file="/commons/csslib.jsp" %>
-    <%@ include file="/commons/jslib.jsp" %>
+    <%@ include file="/commons/headerjs.jsp" %>
 </head>
 <body class="bg-primary">
 <div class="cover" style="background-image: url(${ctx}static/images/cover.jpg)"></div>
@@ -41,6 +42,7 @@
         </div>
     </div>
 </div>
+<%@ include file="/commons/jslib.jsp" %>
 <script type="text/javascript">
     $(function(){
         $("#year").html(new Date().getFullYear());

@@ -1,17 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: gavin
-  Date: 20/09/2016
-  Time: 15:21
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ include file="/commons/taglib.jsp" %>
+<!doctype html>
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <%@ include file="/commons/meta.jsp" %>
+    <title>Sublime - Web Application Admin Dashboard</title>
+    <%@ include file="/commons/csslib.jsp" %>
+    <%@ include file="/commons/headerjs.jsp" %>
 </head>
 <body>
-
+<div class="app">
+    <%@ include file="/commons/header.jsp" %>
+    <%@ include file="/commons/aside.jsp" %>
+</div>
+<%@ include file="/commons/jslib.jsp" %>
 </body>
 </html>
