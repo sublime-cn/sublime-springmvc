@@ -9,6 +9,7 @@
 
     <context:component-scan base-package="com.xlinyu" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 
@@ -23,17 +24,29 @@
 
     <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
 
-    <!-- 配置freeMarker的模板路径 -->
+    <!-- freemarker的配置 -->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="${ftl.view.prefix}"></property>
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">3</prop>
+                <prop key="locale">zh_CN</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="date_format">yyyy-MM-dd</prop>
+            </props>
+        </property>
         <property name="freemarkerVariables">
             <map>
                 <entry key="xml_escape" value-ref="fmXmlEscape"></entry>
+                <entry key="block" value-ref="block" />
+                <entry key="override" value-ref="override" />
+                <entry key="extends" value-ref="extends" />
             </map>
         </property>
     </bean>
 
-    <!-- 配置freeMarker视图解析器 -->
+    <!-- FreeMarker视图解析器 -->
     <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
         <property name="contentType" value="text/html; charset=utf-8"/>
@@ -45,5 +58,10 @@
         <property name="exposeSpringMacroHelpers" value="true"/>
         <property name="requestContextAttribute" value="request"/>
     </bean>
+
+    <!--freemarker 模板继承配置-->
+    <bean id="block" class="cn.org.rapid_framework.freemarker.directive.BlockDirective" />
+    <bean id="override" class="cn.org.rapid_framework.freemarker.directive.OverrideDirective" />
+    <bean id="extends" class="cn.org.rapid_framework.freemarker.directive.ExtendsDirective" />
 
 </beans>
