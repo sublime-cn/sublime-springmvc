@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="${base}/static/styles/themify-icons.css"/>
     <link rel="stylesheet" href="${base}/static/styles/animate.css">
     <link rel="stylesheet" href="${base}/static/styles/app.css">
+    <link rel="stylesheet" href="${base}/static/styles/main.css">
     <link rel="stylesheet" href="${base}/static/vendor/parsley/parsley.css">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -21,7 +22,11 @@
     <#include "header.html"/>
     <section class="layout">
         <#include "left.html"/>
-        <#include "content.html"/>
+        <!-- 内容区域 -->
+        <section class="main-content" id="container">
+            <@block name="body"></@block>
+
+        </section>
     </section>
 </div>
 <script src="${base}/static/js/jquery-2.1.3.js"></script>
@@ -34,11 +39,36 @@
 <script src="${base}/static/vendor/parsley/parsley.js"></script>
 <script src="${base}/static/vendor/parsley/parsley_zh_cn.js"></script>
 <@block name="javascript"></@block>
+<script src="${base}/static/js/offscreen.js"></script>
 <script src="${base}/static/js/main.js"></script>
 <script type="text/javascript">
 
+    function bindLeft(){
+        $('.main-navigation a[data-pjax]').on('click',function(){
+            $('.main-navigation a[data-pjax]').each(function(){
+                $(this).parent().removeClass('active');
+            });
+            $(this).parent().addClass('active');
+        });
+    }
+
     if($.support.pjax){
-        //alert("support")
+
+        $(document).on('click', 'a[data-pjax]', function(event) {
+            $.pjax.click(event, {container: '#container'})
+        })
+
+        $(document).on('pjax:send', function () { //pjax链接点击后显示加载动画；
+            $(".gallery-loader").fadeIn();
+        });
+
+        $(document).on('pjax:complete', function () { //pjax链接加载完成后隐藏加载动画；
+            setTimeout(function(){$(".gallery-loader").fadeOut()},250);
+        });
+
+        /*$.pjax.reload('#container', {
+            selector : 'a[data-pjax]'
+        })*/
     }else{
         alert("not support pjax")
     }
