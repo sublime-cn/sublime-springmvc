@@ -24,6 +24,8 @@
 
     <bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape"/>
 
+    <import resource="classpath:/kr/pe/kwonnam/freemarker/inheritance/freemarker-layout-directives.xml" />
+
     <!-- freemarker的配置 -->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="${ftl.view.prefix}"></property>
@@ -39,16 +41,14 @@
         <property name="freemarkerVariables">
             <map>
                 <entry key="xml_escape" value-ref="fmXmlEscape"></entry>
-                <entry key="block" value-ref="block" />
-                <entry key="override" value-ref="override" />
-                <entry key="extends" value-ref="extends" />
+                <entry key="layout" value-ref="freemarkerLayoutDirectives" />
             </map>
         </property>
     </bean>
 
     <!-- FreeMarker视图解析器 -->
     <bean id="viewResolverFtl" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="viewClass" value="com.xlinyu.base.config.CustomFreeMarkerView"/>
         <property name="contentType" value="text/html; charset=utf-8"/>
         <property name="cache" value="false"/>
         <property name="suffix" value="${ftl.view.suffix}"/>
@@ -59,9 +59,5 @@
         <property name="requestContextAttribute" value="request"/>
     </bean>
 
-    <!--freemarker 模板继承配置-->
-    <bean id="block" class="cn.org.rapid_framework.freemarker.directive.BlockDirective" />
-    <bean id="override" class="cn.org.rapid_framework.freemarker.directive.OverrideDirective" />
-    <bean id="extends" class="cn.org.rapid_framework.freemarker.directive.ExtendsDirective" />
 
 </beans>

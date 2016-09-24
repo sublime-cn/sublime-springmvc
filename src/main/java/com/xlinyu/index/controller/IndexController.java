@@ -9,15 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping(value = {"/"})
-    public String index(){
-
-        return "index";
-    }
-
-    @RequestMapping(value = {"/home"})
+    @RequestMapping(value = {"/","/home"})
     public String home(){
-        System.out.println("home..........");
+
         return "home";
     }
 

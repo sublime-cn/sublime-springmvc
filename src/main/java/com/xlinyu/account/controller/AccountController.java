@@ -39,4 +39,15 @@ public class AccountController {
 
     }
 
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String addUser(){
+        return "account/user_add";
+    }
+
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String userList(){
+        return "account/user_list";
+    }
+
 }

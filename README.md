@@ -9,6 +9,7 @@ https://themify.me/themify-icons
 [freemarker页面如何获取绝对路径basePath](https://segmentfault.com/a/1190000002967105)
 
 [freemarker继承](http://badqiu.iteye.com/blog/553583)
+[freemarker继承](https://github.com/kwon37xi/freemarker-template-inheritance)
 
 ## jQuery 插件
 

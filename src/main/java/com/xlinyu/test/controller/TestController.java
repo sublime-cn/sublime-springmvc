@@ -18,6 +18,11 @@ public class TestController {
         return "test/hello";
     }
 
+    @RequestMapping(value = "/layout", method = RequestMethod.GET)
+    public String layout(){
+        return "layouts/dashboard";
+    }
+
     @ResponseBody
     @RequestMapping("/data/{data}")
     public void data(@PathVariable String data){
