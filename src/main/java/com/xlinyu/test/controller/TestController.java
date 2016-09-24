@@ -15,7 +15,7 @@ public class TestController {
 
     @RequestMapping(value = "/ftl", method = RequestMethod.GET)
     public String ftl(){
-        return "test/hello";
+        return "test/test";
     }
 
     @RequestMapping(value = "/layout", method = RequestMethod.GET)
