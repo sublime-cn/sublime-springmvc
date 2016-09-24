@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by gavin on 20/09/2016.
  */
@@ -25,12 +28,9 @@ public class AccountController {
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public String login(User user){
         logger.info(user);
-        return "redirect:/";
+        return "redirect:/home";
 
     }
-
-
-
 
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signup(){
@@ -39,15 +39,10 @@ public class AccountController {
 
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String addUser(){
-        return "account/user_add";
-    }
-
-
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String userList(){
-        return "account/user_list";
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/account/signin";
     }
 
 }
