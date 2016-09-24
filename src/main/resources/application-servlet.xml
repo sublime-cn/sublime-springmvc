@@ -18,6 +18,8 @@
 
     <mvc:resources mapping="/static/**" location="/static/"/>
 
+    <mvc:view-controller path="/" view-name="redirect:/home"/>
+
     <!--定义返回视图-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="${web.view.prefix}" p:suffix="${web.view.suffix}" p:order="1"></bean>
