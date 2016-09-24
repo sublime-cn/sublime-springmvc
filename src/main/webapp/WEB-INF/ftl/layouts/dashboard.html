@@ -19,22 +19,18 @@
 </head>
 <body>
 <div class="app">
-    <#include "header.html"/>
+    <#include "/common/header.html"/>
     <section class="layout">
-        <#include "left.html"/>
+        <#include "/common/left.html"/>
         <!-- 内容区域 -->
         <section class="main-content" id="container">
-            <@layout.block name="contents">
-
-            </@layout.block>
+            <@layout.block name="content"></@layout.block>
         </section>
     </section>
 </div>
 
-
 <script src="${base}/static/vendor/bootstrap/js/bootstrap-3.3.4.js"></script>
 <script src="${base}/static/vendor/jquery/jquery.pjax.js"></script>
-
 
 <script src="${base}/static/vendor/jquery/placeholders.jquery-2.3.1.js"></script>
 <!--<script src="${base}/static/js/jquery.easing.1.3.js"></script>-->
