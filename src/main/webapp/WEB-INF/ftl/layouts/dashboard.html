@@ -7,9 +7,22 @@
     <link rel="shortcut icon" type="image/x-icon" href="${base}/static/icon/favicon.png"/>
     <link rel="stylesheet" href="${base}/static/vendor/bootstrap/css/bootstrap-3.3.4.css">
     <link rel="stylesheet" href="${base}/static/styles/themify-icons.css"/>
-    <link rel="stylesheet" href="${base}/static/styles/animate.css">
+    <!--<link rel="stylesheet" href="${base}/static/styles/animate.css">-->
+    <!--<link rel="stylesheet" href="${base}/static/styles/skins/palette.css">-->
+    <@layout.block name="css"></@layout.block>
     <link rel="stylesheet" href="${base}/static/styles/app.css">
-    <link rel="stylesheet" href="${base}/static/vendor/parsley/parsley.css">
+    <!--<link rel="stylesheet" href="${base}/static/styles/panel.css">-->
+    <!--<link rel="stylesheet" href="${base}/static/vendor/parsley/parsley.css">-->
+    <@layout.block name="modules_css"></@layout.block>
+    <style type="text/css">
+        /*
+        新建部门的页面可以看看效果
+        */
+        .panel-form {
+            padding-top: 10px;
+        }
+    </style>
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -33,16 +46,19 @@
 <script src="${base}/static/vendor/jquery/jquery.pjax.js"></script>
 
 <script src="${base}/static/vendor/jquery/placeholders.jquery-2.3.1.js"></script>
-<!--<script src="${base}/static/js/jquery.easing.1.3.js"></script>-->
+<!--首页动画 版本介绍及使用说明-->
+<script src="${base}/static/vendor/jquery/jquery.easing.1.3.js"></script>
 
 <script src="${base}/static/vendor/parsley/parsley.js"></script>
 <script src="${base}/static/vendor/parsley/parsley_zh_cn.js"></script>
 
 <script src="${base}/static/vendor/jquery/jquery.slimscroll-1.3.7.js"></script>
 <script src="${base}/static/vendor/jquery/fastclick-1.0.6.js"></script>
+
 <script src="${base}/static/js/offscreen.js"></script>
 <script src="${base}/static/js/main.js"></script>
 <script src="${base}/static/js/app.js"></script>
+<@layout.block name="modules_javascript"></@layout.block>
 <script type="text/javascript">
 
     function bindLeft(){
