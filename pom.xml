@@ -278,7 +278,11 @@
             <version>0.4.RELEASE</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.popkidorc</groupId>
+            <artifactId>mybatis-auto</artifactId>
+            <version>1.0.3</version>
+        </dependency>
     </dependencies>
 
     <build>

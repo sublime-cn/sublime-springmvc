@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:component-scan base-package="com.xlinyu" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>
+
+
+    <bean class="org.mybatis.extension.auto.driver.AutoDataSourceDriver">
+        <property name="auto" value="update"/>
+        <property name="showSql" value="true"/>
+        <property name="formatSql" value="true" />
+        <property name="testSql" value="select 1 from dual;" />
+        <property name="autoPackages">
+            <list>
+                <value>com.xlinyu</value>
+            </list>
+        </property>
+        <property name="dataSource" ref="dataSource" />
+        <property name="dialectClassName" value="org.mybatis.extension.auto.dialect.MysqlDialect"/>
+    </bean>
 
 </beans>

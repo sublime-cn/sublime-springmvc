@@ -32,4 +32,15 @@ http://tv1314.com/post-233.html
 
 ScrollMagic – 酷毙了！超炫的页面滚动交互效果
 
+### mybatis
+
+[mybatis 自动创建表](https://www.versioneye.com/java/com.github.popkidorc:mybatis-auto/1.0.3)
+
+[mybatis 自动创建表](https://github.com/popkidorc/pko_mybatisAuto)
+
+驼峰命名需要需要指定mysql的列明下划线隔开
+
+使用自动创建表时需注意: update必须更新已经存在的表,所以第一次必须是create
+
+
 
