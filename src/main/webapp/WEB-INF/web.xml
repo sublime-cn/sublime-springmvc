@@ -50,4 +50,8 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+    <listener>
+        <listener-class>org.mybatis.extension.auto.listener.AutoDatabaseListener</listener-class>
+    </listener>
+
 </web-app>
