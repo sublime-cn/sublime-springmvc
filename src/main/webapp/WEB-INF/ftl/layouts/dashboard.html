@@ -70,20 +70,31 @@
         });
     }
 
-    if($.support.pjax){
+    $(function() {
 
-        $(document).pjax('a[data-pjax]', '#container', {
-            maxCacheLength:0,
-            push:false,
-            replace:true,
-            fragment: '#container',
-            timeout: 8000
-        });
-        bindLeft();
+        if($.support.pjax){
 
-    }else{
-        alert("not support pjax")
-    }
+            $(document).pjax('a[data-pjax]', '#container', {
+                maxCacheLength:0,
+                push:false,
+                replace:true,
+                fragment: '#container',
+                timeout: 8000
+            });
+
+        }else{
+            alert("not support pjax")
+        }
+
+        /*$(document).on("pjax:popstate", function(){
+            $(document).one("pjax:end", function(event) {
+                $(event.target).find("script[data-exec-on-popstate]").each(function() {
+                    $.globalEval(this.text || this.textContent || this.innerHTML || '');
+                })
+            });
+        });*/
+    });
+
 </script>
 </body>
 </html>
